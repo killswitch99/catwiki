@@ -16,50 +16,16 @@ npm run dev
 This should open up a new page in your default web browser at `localhost:3000`.
 At this point, you should see the placeholder CatWiki app homepage.
 
-## Running frontend tests
+## Built with
 
-From the `client` directory, run the following:
+### Backend
 
-```
-npm test
-```
+1.Express.js: Fast, unopinionated, minimalist web framework for Node.js.
+2.nodemon: Nodemon is a utility that will monitor for any changes in your source and automatically restart your server.
+3.dotenv: Dotenv is a zero-dependency mo: dule that loads environment variables from a .env file into process.env.
+4.axios:Axios is a promise-based HTTP Client for node.js
+4.express-async-handler:Simple middleware for handling exceptions inside of async express routes and passing them to your express error handlers.
 
-This will run the test suite for you.
+### Frontend
 
-## Deploying to Heroku
-
-First, make sure you have a Heroku account, and have successfully logged
-in to Heroku on the command line via `heroku login`.
-
-You'll need to create a new Heroku app (if you haven't already). You can
-do this with the following (replace `${insert-your-app-name-here}` with the
-word `catwiki` followed by your actual name, e.g. `catwiki-johnsmith`):
-
-```
-heroku app:create ${insert-your-app-name-here}
-```
-
-Next we need to add a Git remote for Heroku and commit any changes:
-
-```
-heroku git:remote -a ${insert-your-app-name-here}
-git add .
-git commit -am "Deploy app to Heroku"
-```
-
-Finally we can push our code to the Heroku remote, which will automatically
-build and run our app for us.
-
-```
-git push heroku master
-```
-
-You'll then be able to access your app at
-`http://${insert-your-app-name-here}.herokuapp.com`! :tada:
-
-## Pushing changes to your GitHub repository
-
-```
-git remote add origin git@github.com:${your-github-username}/catwiki.git
-git push origin master
-```
+## Heroku Link

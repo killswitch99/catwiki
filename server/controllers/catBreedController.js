@@ -8,10 +8,9 @@ import { formatData } from '../utils/helpers.js'
 //@access Public
 
 const getCatBreeds = asyncHndler(async (req, res) => {
-	const response = await axios.get(breedsUrl, {
+	const { data } = await axios.get(breedsUrl, {
 		headers: { 'x-api-key': APIKEY },
 	})
-	const { data } = response
 	const getAllData = await Promise.all(formatData(data))
 	return res.json({ getAllData })
 })
@@ -21,14 +20,15 @@ const getCatBreeds = asyncHndler(async (req, res) => {
 //@access Public
 const getCatBreedByName = asyncHndler(async (req, res) => {
 	const { name } = req.params
-	const response = await axios.get(searchUrl, {
+	const { data } = await axios.get(searchUrl, {
 		headers: {
-			q: name,
 			'x-api-key': APIKEY,
 		},
+		params: {
+			q: name,
+		},
 	})
-	const { data } = response
-	const getAllData = await Promise.all(formatData(data))
+	const getAllData = await Promise.all(data)
 	return res.json(getAllData)
 })
 
