@@ -51,4 +51,9 @@ const formatData = (cats) => {
 		}
 	)
 }
-export { formatData }
+const formatId = (cats) => {
+	return cats.map(async ({ name }) => {
+		return name
+	})
+}
+export { formatData, formatId }

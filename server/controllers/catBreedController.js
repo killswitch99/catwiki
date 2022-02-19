@@ -1,7 +1,7 @@
 import asyncHndler from 'express-async-handler'
 import { APIKEY, breedsUrl, searchUrl } from '../utils/constants.js'
 import axios from 'axios'
-import { formatData } from '../utils/helpers.js'
+import { formatData, formatId } from '../utils/helpers.js'
 
 //@desc Fetch all cat breeds
 //@route Get /api/breeds
@@ -32,4 +32,15 @@ const getCatBreedByName = asyncHndler(async (req, res) => {
 	return res.json(getAllData)
 })
 
-export { getCatBreedByName, getCatBreeds }
+//@desc Fetch a single cat breed
+//@route Get /api/breeds/allbreednames
+//@access Public
+const getAllCatBreedsName = asyncHndler(async (req, res) => {
+	const { data } = await axios.get(breedsUrl, {
+		headers: { 'x-api-key': APIKEY },
+	})
+	const getAllData = await Promise.all(formatId(data))
+	return res.json(getAllData)
+})
+
+export { getCatBreedByName, getCatBreeds, getAllCatBreedsName }
