@@ -12,7 +12,7 @@ const getCatBreeds = asyncHndler(async (req, res) => {
 		headers: { 'x-api-key': APIKEY },
 	})
 	const getAllData = await Promise.all(formatData(data))
-	return res.json({ getAllData })
+	return res.json({ list: getAllData })
 })
 
 //@desc Fetch a single cat breed
@@ -29,10 +29,10 @@ const getCatBreedByName = asyncHndler(async (req, res) => {
 		},
 	})
 	const getAllData = await Promise.all(data)
-	return res.json(getAllData)
+	return res.json({ details: getAllData })
 })
 
-//@desc Fetch a single cat breed
+//@desc Fetch all name array
 //@route Get /api/breeds/allbreednames
 //@access Public
 const getAllCatBreedsName = asyncHndler(async (req, res) => {
