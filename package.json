@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
+	"type": "module",
 	"scripts": {
 		"start": "node server/index.js",
 		"server": "nodemon server/index.js",
@@ -15,7 +16,10 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
-		"express": "^4.17.2"
+		"axios": "^0.26.0",
+		"dotenv": "^16.0.0",
+		"express": "^4.17.3",
+		"express-async-handler": "^1.2.0"
 	},
 	"engines": {
 		"node": "v17.4.0"

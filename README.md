@@ -10,7 +10,7 @@ completely from scratch! :smiley_cat:
 Open a new tab, and run the following commands in your terminal:
 
 ```
-npm dev
+npm run dev
 ```
 
 This should open up a new page in your default web browser at `localhost:3000`.
