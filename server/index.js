@@ -16,18 +16,12 @@ app.get('/api', (req, res) => {
 })
 app.use('/api/breeds/', catBreedRoutes)
 
-if (process.env.NODE_ENV === 'production') {
-	app.use(express.static(path.resolve(__dirname, '/client/build')))
-	// All other GET requests not handled before will return our React app
-	app.get('*', (req, res) => {
-		res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'))
-	})
-} else {
-	app.get('/', (req, res) => {
-		res.send('API is running')
-	})
-}
-
+// Have Node serve the files for our built React app
+app.use(express.static(path.resolve(__dirname, '../client/build')))
+// All other GET requests not handled before will return our React app
+app.get('*', (req, res) => {
+	res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'))
+})
 app.listen(PORT, () => {
 	console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
 })
