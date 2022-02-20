@@ -30,7 +30,19 @@ At this point, you should see the placeholder CatWiki app homepage.
 ### Frontend
 
 1.React Strap: Stateless React Components for Bootstrap 5.
+2.Context API for state management
 
 ## Heroku Link
 
 https://catwikiapp.herokuapp.com/
+
+### Functionality
+
+1.Serves cat images with basic information on the front page
+2.Theres a list of breed name in the nav bar for quick access
+3.All the cat breeds are searchable by name or origin
+4.Clicking on more details opens a new page with more details for a particular cat breed
+
+### Bugs
+
+You tell me
