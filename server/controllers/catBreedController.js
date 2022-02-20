@@ -28,8 +28,8 @@ const getCatBreedByName = asyncHndler(async (req, res) => {
 			q: name,
 		},
 	})
-	const getAllData = await Promise.all(data)
-	return res.json({ details: getAllData })
+	const getAllData = await Promise.all(formatData(data))
+	return res.json(getAllData)
 })
 
 //@desc Fetch all name array

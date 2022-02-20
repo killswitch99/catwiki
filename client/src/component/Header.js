@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { CatsContext } from './CatsContext'
-
+import { useNavigate } from 'react-router-dom'
 import {
 	Navbar,
 	NavbarBrand,
@@ -13,11 +13,15 @@ import {
 	DropdownMenu,
 	NavbarToggler,
 	DropdownItem,
-	NavbarText,
 } from 'reactstrap'
+import Searchbar from './Seachbar'
 
 const Header = () => {
 	const { breedsNameList } = useContext(CatsContext)
+	const navigate = useNavigate()
+	const handleOnClick = (e) => {
+		navigate(`/${e.target.value}`)
+	}
 	return (
 		<div>
 			<Navbar color="light" expand="md" light>
@@ -39,12 +43,19 @@ const Header = () => {
 							</DropdownToggle>
 							<DropdownMenu end>
 								{breedsNameList.map((breed) => (
-									<DropdownItem key={breed.id}>{breed.name}</DropdownItem>
+									<DropdownItem
+										onClick={handleOnClick}
+										key={breed.id}
+										value={breed.name}
+									>
+										{breed.name}
+									</DropdownItem>
 								))}
 							</DropdownMenu>
 						</UncontrolledDropdown>
 					</Nav>
-					<NavbarText>Search bar</NavbarText>
+
+					<Searchbar style={{ listStyle: 'none' }} />
 				</Collapse>
 			</Navbar>
 		</div>

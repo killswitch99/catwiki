@@ -4,27 +4,33 @@ export const CatsContext = createContext([])
 
 const CatsProvider = ({ children }) => {
 	const [breeds, setBreeds] = useState([])
-	const [catName, setCatName] = useState('')
 	const [breedsNameList, setBreedsNameList] = useState([])
 	const [loading, setIsLoading] = useState(true)
+	const [searchQ, setSearchQ] = useState('')
 
-	const handleInputChange = (event) => {
-		setCatName(event.target.value)
+	const getBreeds = async () => {
+		const { data } = await axios.get('/api/breeds')
+		setBreeds(data.list)
+		setIsLoading(false)
 	}
-
-	useEffect(async () => {
+	const getAllBreedName = async () => {
 		const { data } = await axios.get('/api/breeds/allbreednames')
 		const getAllData = await Promise.all(data)
 		setBreedsNameList(getAllData)
+	}
+
+	useEffect(() => {
+		getAllBreedName()
+		getBreeds()
 	}, [])
 	return (
 		<CatsContext.Provider
 			value={{
 				breeds,
-				catName,
 				breedsNameList,
 				loading,
-				handleInputChange,
+				searchQ,
+				setSearchQ,
 			}}
 		>
 			{children}
