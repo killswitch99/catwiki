@@ -30,9 +30,6 @@ const Header = () => {
 				<Collapse navbar>
 					<Nav className="me-auto" navbar>
 						<NavItem>
-							<NavLink href="/">Home</NavLink>
-						</NavItem>
-						<NavItem>
 							<NavLink href="https://github.com/killswitch99/catwiki">
 								GitHub
 							</NavLink>
