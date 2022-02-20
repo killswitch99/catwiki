@@ -1,9 +1,10 @@
-# CatWiki
+# User Story
 
-This is a basic template to get you started with the CatWiki challenge.
-It contains a frontend and a backend, with some very basic interaction
-between them. Feel free to modify whatever you wish, or to start
-completely from scratch! :smiley_cat:
+User story: I can search for cat breeds from the homepage and select a breed of my choice from a list
+
+User story: I can see more photos of the breed on the breed details page
+
+User story: I can see the breed details including description, temperament, origin, life span, adaptability, affection level, child-friendly, grooming, intelligence, health issues, social needs, stranger friendly
 
 ## Starting the app
 
@@ -28,4 +29,8 @@ At this point, you should see the placeholder CatWiki app homepage.
 
 ### Frontend
 
+1.React Strap: Stateless React Components for Bootstrap 5.
+
 ## Heroku Link
+
+https://catwikiapp.herokuapp.com/
