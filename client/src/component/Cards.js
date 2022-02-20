@@ -6,7 +6,7 @@ const Cards = ({ props }) => {
 	const navigate = useNavigate()
 	const handleOnClick = useCallback(
 		() => navigate(`/${props.name}`, { replace: true }),
-		[navigate]
+		[navigate, props.name]
 	)
 	return (
 		<Card>
