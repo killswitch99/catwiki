@@ -88,7 +88,7 @@ const CatsDetailsScreen = () => {
 							</CardText>
 							<CardText>
 								<strong>Stranger Friendly</strong> : {cat[0].stranger_friendly}{' '}
-								out of 5 /5
+								out of 5
 							</CardText>
 						</CardBody>
 					</Card>
